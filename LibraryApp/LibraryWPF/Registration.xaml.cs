@@ -1,5 +1,4 @@
 ﻿using LibraryBusiness;
-using SouthWindBusiness;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,6 +39,7 @@ namespace LibraryWPF
             var postcode = Postalcodetxt.Text.Trim();
             var password = Passwordtxt.Password.Trim();
             var cpassword = ConfirmedPasswordtxt.Password.Trim();
+            var username = Usernametxt.Text.Trim();
 
             if
                (
@@ -50,6 +50,7 @@ namespace LibraryWPF
                String.IsNullOrEmpty(housenum) ||
                String.IsNullOrEmpty(street) ||
                String.IsNullOrEmpty(city) ||
+                String.IsNullOrEmpty(username) ||
              String.IsNullOrEmpty(password) ||
                String.IsNullOrEmpty(cpassword)
                )
@@ -64,7 +65,7 @@ namespace LibraryWPF
                     var enc = Crypto.Encrypt(password);
              
                    
-                    cm.CreateMember(firstname,lastname,email,phone,housenum,street,city,postcode,enc);
+                    cm.CreateMember(firstname,lastname,username,email,phone,housenum,street,city,postcode,enc);
 
                     MessageBox.Show("Account has been created", "Account");
                     }

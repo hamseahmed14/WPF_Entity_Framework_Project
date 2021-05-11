@@ -23,6 +23,7 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -37,8 +38,9 @@
         <TextBlock Text="Street:" Grid.Row="6" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="15" FontWeight="Bold"/>
         <TextBlock Text="City:" Grid.Row="7" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="15" FontWeight="Bold"/>
         <TextBlock Text="Postal Code:" Grid.Row="8" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="15" FontWeight="Bold"/>
-        <TextBlock Text="Password:" Grid.Row="9" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="15" FontWeight="Bold"/>
-        <TextBlock Text="Confirm Password:" Grid.Row="10" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+        <TextBlock Text="Username:" Grid.Row="9" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+        <TextBlock Text="Password:" Grid.Row="10" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+        <TextBlock Text="Confirm Password:" Grid.Row="11" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="15" FontWeight="Bold"/>
         
         <TextBox x:Name="FirstNametxt" Grid.Column="1" Grid.Row="1" HorizontalAlignment="center" Grid.ColumnSpan="2" Width="400" VerticalAlignment="Center" />
         <TextBox x:Name="LastNametxt" Grid.Column="1" Grid.Row="2" HorizontalAlignment="center" Grid.ColumnSpan="2" Width="400" VerticalAlignment="Center" />
@@ -48,10 +50,13 @@
         <TextBox x:Name="Streettxt" Grid.Column="1" Grid.Row="6" HorizontalAlignment="center" Grid.ColumnSpan="2" Width="400" VerticalAlignment="Center" />
         <TextBox x:Name="Citytxt" Grid.Column="1" Grid.Row="7" HorizontalAlignment="center" Grid.ColumnSpan="2" Width="400" VerticalAlignment="Center" />
         <TextBox x:Name="Postalcodetxt" Grid.Column="1" Grid.Row="8" HorizontalAlignment="center" Grid.ColumnSpan="2" Width="400" VerticalAlignment="Center" />
-        <PasswordBox x:Name="Passwordtxt" Grid.Column="1" Grid.Row="9" HorizontalAlignment="center" Grid.ColumnSpan="2" Width="400" VerticalAlignment="Center" />
-        <PasswordBox x:Name="ConfirmedPasswordtxt" Grid.Column="1" Grid.Row="10" HorizontalAlignment="center" Grid.ColumnSpan="2" Width="400" VerticalAlignment="Center" />
-       
-        <Button x:Name="SumbitBtn" Content="Submit" Grid.Column="1" Grid.Row="11" HorizontalAlignment="Center"  VerticalAlignment="Center" Click="SumbitBtn_Click"/>
+        <TextBox x:Name="Usernametxt" Grid.Column="1" Grid.Row="9" HorizontalAlignment="center" Grid.ColumnSpan="2" Width="400" VerticalAlignment="Center" />
+        <PasswordBox x:Name="Passwordtxt" Grid.Column="1" Grid.Row="10" HorizontalAlignment="center" Grid.ColumnSpan="2" Width="400" VerticalAlignment="Center" />
+        <PasswordBox x:Name="ConfirmedPasswordtxt" Grid.Column="1" Grid.Row="11" HorizontalAlignment="center" Grid.ColumnSpan="2" Width="400" VerticalAlignment="Center" />
+
+        <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
+  Width="150"
+  ToolTip="Resource name: MaterialDesignRaisedLightButton" x:Name="SumbitBtn" Content="Submit" Grid.Column="1" Grid.Row="12" HorizontalAlignment="Center"  VerticalAlignment="Center" Click="SumbitBtn_Click"/>
         <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="Registration" FontSize="30" FontWeight="Bold" Foreground="OrangeRed" VerticalAlignment="Center"/>
 
     </Grid>

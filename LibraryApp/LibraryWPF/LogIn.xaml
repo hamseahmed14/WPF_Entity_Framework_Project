@@ -21,18 +21,19 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="300"/>
+            <RowDefinition/>
+            <RowDefinition Height="200"/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Image Source="/profile_icon.png" Grid.Column="1" HorizontalAlignment="Center" Height="200" VerticalAlignment="Center" Width="200"/>
-        <TextBox x:Name="username" Grid.Column="0" HorizontalAlignment="Center"  materialDesign:HintAssist.Hint="Username" Background="White" Grid.ColumnSpan="3"   Grid.Row="1"  VerticalAlignment="Center" Width="350"/>
-        <PasswordBox x:Name="password" Grid.Column="0" materialDesign:HintAssist.Hint="Password" HorizontalAlignment="Center" Background="White" Grid.ColumnSpan="3"  Grid.Row="2"  VerticalAlignment="Center" Width="350"/>
+        <Image Source="/profile_icon.png" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Height="200" VerticalAlignment="Center" Width="200"/>
+        <TextBox x:Name="UserName" Grid.Column="0" HorizontalAlignment="Center"  materialDesign:HintAssist.Hint="Username" Background="White" Grid.ColumnSpan="3"   Grid.Row="2"  VerticalAlignment="Center" Width="350"/>
+        <PasswordBox x:Name="Password" Grid.Column="0" materialDesign:HintAssist.Hint="Password" HorizontalAlignment="Center" Background="White" Grid.ColumnSpan="3"  Grid.Row="3"  VerticalAlignment="Center" Width="350"/>
         <Button
   Style="{StaticResource MaterialDesignRaisedLightButton}"
   Width="150"
-  ToolTip="Resource name: MaterialDesignRaisedLightButton"
-  Content="_Submit" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Click="SubmitBtn_Click"/>
+  Content="_Submit" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Click="SubmitBtn_Click"/>
+        <TextBlock Grid.Column="0" HorizontalAlignment="Center"  Text="Log In"  VerticalAlignment="Center" Grid.ColumnSpan="3" FontSize="30" FontWeight="Bold" Foreground="OrangeRed"/>
     </Grid>
 </Page>
