@@ -4,3 +4,6 @@ The application is a Covid-19 friendly library system. The purpose of this appli
 
 The admin can add , remove and update books on the application. Furthermore the admin can accept loan requests from members and can either allow or deny the requests.  The admin will also be able to update members and remove those who have broken the library policy.  
 
+#### sprint 1
+
+![image-20210511163349240](C:\Users\hamse\AppData\Roaming\Typora\typora-user-images\image-20210511163349240.png)
