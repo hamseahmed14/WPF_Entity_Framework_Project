@@ -31,5 +31,13 @@ namespace LibraryBusiness
                 db.SaveChanges();
             }
         }
+
+        public List<Member> RetrieveAllMembers()
+        {
+            using (var db = new LibraryContext())
+            {
+                return db.Members.ToList(); ;
+            }
+        }
     }
 }
