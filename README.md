@@ -4,6 +4,10 @@ The application is a Covid-19 friendly library system. The purpose of this appli
 
 The admin can add , remove and update books on the application. Furthermore the admin can accept loan requests from members and can either allow or deny the requests.  The admin will also be able to update members and remove those who have broken the library policy.  
 
+# ERD
+
+![ERD](C:\Users\hamse\github\WPF_Entity_Framework_Project\images\ERD.PNG)
+
 #### sprint 1
 
-![image-20210511163349240](C:\Users\hamse\AppData\Roaming\Typora\typora-user-images\image-20210511163349240.png)
+![images](C:\Users\hamse\github\WPF_Entity_Framework_Project\images\sprint_1_image_backlog.PNG)
