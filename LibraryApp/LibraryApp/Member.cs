@@ -23,6 +23,7 @@ namespace LibraryApp
         public string City { get; set; }
         public string PostalCode { get; set; }
         public char Role { get; set; }
+        public string Password { get; set; }
 
         public virtual ICollection<Loan> Loans { get; set; }
 
