@@ -5801,11 +5801,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hamse\\source\\repos\\LibraryApp\\LibraryApp\\LibraryApp.csproj",
+      "projectUniqueName": "C:\\Users\\hamse\\github\\WPF_Entity_Framework_Project\\LibraryApp\\LibraryApp\\LibraryApp.csproj",
       "projectName": "LibraryApp",
-      "projectPath": "C:\\Users\\hamse\\source\\repos\\LibraryApp\\LibraryApp\\LibraryApp.csproj",
+      "projectPath": "C:\\Users\\hamse\\github\\WPF_Entity_Framework_Project\\LibraryApp\\LibraryApp\\LibraryApp.csproj",
       "packagesPath": "C:\\Users\\hamse\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hamse\\source\\repos\\LibraryApp\\LibraryApp\\obj\\",
+      "outputPath": "C:\\Users\\hamse\\github\\WPF_Entity_Framework_Project\\LibraryApp\\LibraryApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hamse\\AppData\\Roaming\\NuGet\\NuGet.Config",

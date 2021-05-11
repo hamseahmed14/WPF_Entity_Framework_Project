@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lUV4Qacz529oKgjIERGBezRxAK7+MFIIpSen02w81Nomamn4X5zdFFptP7yrcO68NLxbRUcNRTvYDqt4FxN4lA==",
+  "dgSpecHash": "pLkKPfzHXBHstQ/tfNHpNRmUn3Hw+9CUUj0CMQ3OpsxJmFp/hq2JKtGODhu+37KYmd/IYXjTwcJFZuYTUizp9A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hamse\\source\\repos\\LibraryApp\\LibraryApp\\LibraryApp.csproj",
+  "projectFilePath": "C:\\Users\\hamse\\github\\WPF_Entity_Framework_Project\\LibraryApp\\LibraryApp\\LibraryApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hamse\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\hamse\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
