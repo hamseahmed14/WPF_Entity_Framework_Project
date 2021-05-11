@@ -7,7 +7,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ERD.png" />
+    <None Remove="Images\profile_icon.png" />
+    <None Remove="profile_icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\profile_icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LibraryBusiness\LibraryBusiness.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="ERD.png" />
+    <Resource Include="profile_icon.png" />
   </ItemGroup>
 
 </Project>

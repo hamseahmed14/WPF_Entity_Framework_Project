@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LibraryBusiness;
+using SouthWindBusiness;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +22,7 @@ namespace LibraryWPF
     /// </summary>
     public partial class Registration : Page
     {
+        MemberCRUDManager cm = new MemberCRUDManager();
         public Registration()
         {
             InitializeComponent();
@@ -27,7 +30,55 @@ namespace LibraryWPF
 
         private void SumbitBtn_Click(object sender, RoutedEventArgs e)
         {
+            var firstname = FirstNametxt.Text.Trim();
+            var lastname = LastNametxt.Text.Trim();
+            var email = Emailtxt.Text.Trim();
+            var phone = Phonetxt.Text.Trim();
+            var housenum = HouseNumbertxt.Text.Trim();
+            var street = Streettxt.Text.Trim();
+            var city = Citytxt.Text.Trim();
+            var postcode = Postalcodetxt.Text.Trim();
+            var password = Passwordtxt.Password.Trim();
+            var cpassword = ConfirmedPasswordtxt.Password.Trim();
 
+            if
+               (
+              String.IsNullOrEmpty(firstname) ||
+              String.IsNullOrEmpty(lastname) ||
+               String.IsNullOrEmpty(email) ||
+              String.IsNullOrEmpty(postcode) ||
+               String.IsNullOrEmpty(housenum) ||
+               String.IsNullOrEmpty(street) ||
+               String.IsNullOrEmpty(city) ||
+             String.IsNullOrEmpty(password) ||
+               String.IsNullOrEmpty(cpassword)
+               )
+            {
+                MessageBox.Show("Fill in all fields", "Empty Fields");
+            }
+            else
+            {
+                if (password == cpassword)
+                {
+                    if (cm.IsValidEmailAddress(email)) { 
+                    var enc = Crypto.Encrypt(password);
+             
+                   
+                    cm.CreateMember(firstname,lastname,email,phone,housenum,street,city,postcode,enc);
+
+                    MessageBox.Show("Account has been created", "Account");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Input valid Email", "Invalid Input");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Confirmed password does not match password", "Invalid Input");
+                }
+            }
+          
         }
     }
 }

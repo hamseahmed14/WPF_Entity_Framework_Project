@@ -8,7 +8,7 @@
         Title="MainWindow" MinHeight="600" MinWidth="700" SizeToContent="WidthAndHeight">
     <Grid>
         <StackPanel   Orientation="Horizontal" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right" Panel.ZIndex="1">
-            <Button Content="Log in" MinWidth="100"  Background="Transparent" BorderThickness="0" Foreground="Wheat" FontWeight="Bold"/>
+            <Button Content="Log in" MinWidth="100" Click="BtnClickLogIn" Background="Transparent" BorderThickness="0" Foreground="Wheat" FontWeight="Bold"/>
             <Button Content="Register" MinWidth="100" Click="BtnClickRegister" Background="Transparent" BorderThickness="0" Foreground="Wheat" FontWeight="Bold"/>
         </StackPanel>
         <Frame  NavigationUIVisibility="Hidden" x:Name="Main" Margin="0,0,0,0" Panel.ZIndex="0" />

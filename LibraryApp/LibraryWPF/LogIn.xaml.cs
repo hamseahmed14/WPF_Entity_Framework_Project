@@ -16,24 +16,18 @@ using System.Windows.Shapes;
 namespace LibraryWPF
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for LogIn.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class LogIn : Page
     {
-        public MainWindow()
+        public LogIn()
         {
             InitializeComponent();
         }
 
-
-        private void BtnClickRegister(object sender, RoutedEventArgs e)
+        private void SubmitBtn_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Registration();
-        }
 
-        private void BtnClickLogIn(object sender, RoutedEventArgs e)
-        {
-            Main.Content = new LogIn();
         }
     }
 }
