@@ -6,8 +6,8 @@ The admin can add , remove and update books on the application. Furthermore the 
 
 # ERD
 
-![ERD](C:\Users\hamse\github\WPF_Entity_Framework_Project\images\ERD.PNG)
+![ERD](images\ERD.PNG)
 
 #### sprint 1
 
-![images](C:\Users\hamse\github\WPF_Entity_Framework_Project\images\sprint_1_image_backlog.PNG)
+![images](images\sprint_1_image_backlog.PNG)
