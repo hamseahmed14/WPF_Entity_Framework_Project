@@ -16,19 +16,18 @@ using System.Windows.Shapes;
 namespace LibraryWPF
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Registration.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Registration : Page
     {
-        public MainWindow()
+        public Registration()
         {
             InitializeComponent();
         }
 
-
-        private void BtnClickRegister(object sender, RoutedEventArgs e)
+        private void SumbitBtn_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Registration();
+
         }
     }
 }
