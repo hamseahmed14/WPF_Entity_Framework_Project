@@ -10,7 +10,7 @@ The admin can add , remove and update books on the application. Furthermore the 
 
 # ERD
 
-![ERD](\images\ERD.PNG)
+![ERD](images\ERD.PNG)
 
 # Sprints
 
