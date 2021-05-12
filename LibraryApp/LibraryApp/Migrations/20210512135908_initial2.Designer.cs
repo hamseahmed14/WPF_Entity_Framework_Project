@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LibraryApp.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    [Migration("20210511145627_AddPasswordToMembersTable")]
-    partial class AddPasswordToMembersTable
+    [Migration("20210512135908_initial2")]
+    partial class initial2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,37 +28,12 @@ namespace LibraryApp.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("AuthorId");
 
                     b.ToTable("Authors");
-                });
-
-            modelBuilder.Entity("LibraryApp.AuthorBook", b =>
-                {
-                    b.Property<int>("AuthorBookId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("AuthorId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("BookId")
-                        .HasColumnType("int");
-
-                    b.HasKey("AuthorBookId");
-
-                    b.HasIndex("AuthorId");
-
-                    b.HasIndex("BookId");
-
-                    b.ToTable("AuthorsBooks");
                 });
 
             modelBuilder.Entity("LibraryApp.Book", b =>
@@ -90,6 +65,8 @@ namespace LibraryApp.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("BookId");
+
+                    b.HasIndex("AuthorId");
 
                     b.ToTable("Books");
                 });
@@ -177,28 +154,23 @@ namespace LibraryApp.Migrations
                     b.Property<string>("Street")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("MemberId");
 
                     b.ToTable("Members");
                 });
 
-            modelBuilder.Entity("LibraryApp.AuthorBook", b =>
+            modelBuilder.Entity("LibraryApp.Book", b =>
                 {
                     b.HasOne("LibraryApp.Author", "Author")
-                        .WithMany()
+                        .WithMany("Books")
                         .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("LibraryApp.Book", "Book")
-                        .WithMany()
-                        .HasForeignKey("BookId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Author");
-
-                    b.Navigation("Book");
                 });
 
             modelBuilder.Entity("LibraryApp.Loan", b =>
@@ -229,6 +201,11 @@ namespace LibraryApp.Migrations
                     b.Navigation("Book");
 
                     b.Navigation("Loan");
+                });
+
+            modelBuilder.Entity("LibraryApp.Author", b =>
+                {
+                    b.Navigation("Books");
                 });
 
             modelBuilder.Entity("LibraryApp.Book", b =>

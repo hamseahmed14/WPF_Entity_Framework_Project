@@ -1,4 +1,5 @@
 ﻿using LibraryApp;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace LibraryBusiness
 {
     public class MemberCRUDManager
     {
-        public Member SelectedMember { get; set; }
+        public Book SelectedBook { get; set; }
 
         public void CreateMember(string firstname, string lastname,string username , string email, string phonenumber, string housenumber, string street, string city, string postalcode, string password)
         {
@@ -46,10 +47,16 @@ namespace LibraryBusiness
         {
             using (var db = new LibraryContext())
             {
-                return db.Books.ToList();
+                return db.Books.Include(b => b.Author).ToList(); 
             }
 
         }
+
+        public void SetSelectedBook(object selectedItem)
+        {
+            SelectedBook = (Book)selectedItem;
+        }
+
 
         public bool IsValidEmailAddress(string s)
         {

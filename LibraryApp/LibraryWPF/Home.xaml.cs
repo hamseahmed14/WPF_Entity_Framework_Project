@@ -47,7 +47,19 @@ namespace LibraryWPF
       
         }
 
-   
+
+        private void BookListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (BookListView.SelectedItem != null)
+            {
+                cm.SetSelectedBook(BookListView.SelectedItem);
+                if (cm.SelectedBook != null)
+                {
+                    var authorname = cm.SelectedBook.Author.Name;
+                    MessageBox.Show(authorname);
+                }
+            }
+        }
     }
 
  

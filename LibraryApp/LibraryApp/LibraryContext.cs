@@ -12,7 +12,7 @@ namespace LibraryApp
         public DbSet<Loan> Loans { get; set; }
         public DbSet<Member> Members { get; set; }
         public DbSet<LoanDetail> LoanDetails { get; set; }
-        public DbSet<AuthorBook> AuthorsBooks { get; set; }
+      
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {

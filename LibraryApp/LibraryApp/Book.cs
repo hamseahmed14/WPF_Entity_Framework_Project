@@ -22,6 +22,7 @@ namespace LibraryApp
         public int Available { get; set; }
         public string ImageSrc { get; set; }
 
+        public virtual Author Author { get; set; }
         public virtual ICollection<LoanDetail> LoanDetails { get; set; }
     }
 }
