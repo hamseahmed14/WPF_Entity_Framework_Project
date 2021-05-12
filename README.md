@@ -18,7 +18,7 @@ The admin can add , remove and update books on the application. Furthermore the 
 
 ###### Kanban board at start of sprint
 
-![images](\images\sprint_1_image_backlog.PNG)
+![images](/images/sprint_1_image_backlog.PNG)
 
 
 
@@ -36,7 +36,7 @@ The admin can add , remove and update books on the application. Furthermore the 
 
 ###### Kanban board at end of sprint
 
-![sprint_1_KanbanEnd](\images\sprint_1_image_backlog_done.PNG)
+![sprint_1_KanbanEnd](/images/sprint_1_image_backlog_done.PNG)
 
 ###### Sprint review
 
