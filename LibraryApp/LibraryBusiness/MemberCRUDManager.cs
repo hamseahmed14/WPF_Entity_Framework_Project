@@ -42,6 +42,15 @@ namespace LibraryBusiness
             }
         }
 
+        public List<Book> RetrieveAllBooks()
+        {
+            using (var db = new LibraryContext())
+            {
+                return db.Books.ToList();
+            }
+
+        }
+
         public bool IsValidEmailAddress(string s)
         {
             Regex regex = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");

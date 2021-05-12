@@ -52,7 +52,7 @@ namespace LibraryWPF
                 switch (auth.GetRole(Cred))
                 {
                     case 'M':
-                        Home windowHome = new Home();
+                        Home windowHome = new Home(Cred);
                         Application.Current.MainWindow.Close();
                         windowHome.Show();
                         break;

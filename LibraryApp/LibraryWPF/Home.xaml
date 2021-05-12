@@ -4,9 +4,34 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryWPF"
+        xmlns:model ="clr-namespace:LibraryApp;assembly=LibraryApp"
+        
+            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="{materialDesign:MaterialDesignFont}"
         mc:Ignorable="d"
         Title="Home" Height="450" Width="800">
+
+    <Window.DataContext>
+        <model:Book/>
+    </Window.DataContext>
     <Grid>
-        
+        <ListView x:Name="BookListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical">
+                        <TextBlock Text="{Binding Title}" Margin="3,0"/>
+                            <TextBlock Text="{Binding Description}"/>
+                        </StackPanel>
+                        <Image Source="/Images/HarryPotterOrderOfPhoenixImage.jpg" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
     </Grid>
 </Window>

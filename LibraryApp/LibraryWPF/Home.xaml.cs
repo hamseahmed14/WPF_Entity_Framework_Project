@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryBusiness;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,37 @@ namespace LibraryWPF
     /// </summary>
     public partial class Home : Window
     {
-        public Home()
+        private string cred;
+
+        List<string> list = new List<string>();
+        MemberCRUDManager cm = new MemberCRUDManager();
+
+        
+
+        public Home(string cred)
         {
             InitializeComponent();
+            this.cred = cred;
+
+            list.Add("Hamse");
+            list.Add("Ahmed");
+            list.Add("Mohamed");
+
+
+
+            BookListView.ItemsSource = cm.RetrieveAllBooks();
+            
+            
+
+          //  var d = cm.RetrieveAllBooks();
+
+      
         }
+
+   
     }
+
+ 
+
+ 
 }
