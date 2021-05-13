@@ -44,7 +44,9 @@ In this sprint all the user stories have been completed .
 
 ###### Sprint Retrospective
 
-The sprint had a big workload, but I have managed to complete all the user stories and side tasks. This sprint has given me enough info on how big the workload should be for the sprints to come. Next time I will give myself enough time so that I don't need to under pressure when it is not needed.
+The sprint had a big workload, but I have managed to complete all the user stories and side tasks. This sprint has given me enough info on how big the workload should be for the sprints to come. 
+
+Next time I will give myself enough time so that I don't need to under pressure when it is not needed.
 
 
 
@@ -58,11 +60,9 @@ The sprint had a big workload, but I have managed to complete all the user stori
 
 ###### Sprint Goals
 
-- [ ] User Story 2.1
+- [x] User Story 2.1
 
 - [x] User Story 2.1.1
-
-- [ ] User Story 2.1.2
 
 - [x] User Story 2.1.3
 
@@ -70,7 +70,7 @@ The sprint had a big workload, but I have managed to complete all the user stori
 
 - [x] Edit ReadMe to contain sprint 2
 
-- [ ] Commit changes to GitHub
+- [x] Commit changes to GitHub
 
   
 
@@ -86,7 +86,34 @@ Not all user stories have been competed in sprint 2. The user stories that are s
 
 At the start of the sprint everything went well with no major blocks, but during the testing of a query I soon realised that the database was incorrectly designed. This led to a lot of time being wasted trying to fix it and not completing the sprint on time. 
 
+Next time I would like to plan the sprints properly so that their are no unexpected blocks.
 
 
 
+### Sprint 3
+
+###### Kanban Board at start of sprint
+
+![Kanban board sprint 3](/images/sprint_3_backlog.PNG)
+
+###### Sprint Goals
+
+- [x] User Story 2.2
+- [x] User Story 2.3
+
+
+
+###### Kanban Board at end of sprint
+
+![Kanban board at end](/images/sprint_3_backlog_done.PNG)
+
+###### Sprint Review
+
+All the user stories have been completed for sprint 3. Search and Filter functions have been added to the Book page. The users can use this to search through the catalogue of books. 
+
+###### Sprint Retrospective
+
+In terms of time management sprint 3 went better than sprint 2. This is because the most difficult parts of the project has been completed in sprint 1 and 2. Although I've managed to complete all the user stories, some refactoring is needed when the time is available. 
+
+Next time I would like to spend more time on making the quality of code good and DRY.
 
