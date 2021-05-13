@@ -21,7 +21,7 @@ namespace LibraryWPF
     public partial class Home : Window
     {
         private string cred;
-
+        
     
         MemberCRUDManager cm = new MemberCRUDManager();
 
@@ -63,6 +63,49 @@ namespace LibraryWPF
             var booklist = cm.RetrieveAllBooks();
 
             var list = cm.Search(booklist,searchtext);
+
+            BookListView.ItemsSource = list;
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            List<Object> filteredList = new List<Object>();
+            List<CheckBox> checkBoxList = new List<CheckBox> { FantasyCheckBox, MysteryCheckBox };
+            var list = cm.RetrieveAllBooks();
+
+            foreach (var checkBox in checkBoxList)
+            {
+                if (checkBox.IsChecked == true)
+                {
+                    var returnList = cm.FilterGenre(list, checkBox.Content.ToString());
+
+                    foreach (var item in returnList)
+                    {
+                        filteredList.Add(item);
+                    }
+                }
+            }
+
+            BookListView.ItemsSource = filteredList;
+        }
+
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            List<CheckBox> checkBoxList = new List<CheckBox> { FantasyCheckBox, MysteryCheckBox };
+            var list = new List<Object>();
+
+            foreach (var checkBox in checkBoxList)
+            {
+                if (checkBox.IsChecked == false)
+                {
+                    var returnList = cm.AddGenre(checkBox.Content.ToString());
+
+                    foreach (var book in returnList)
+                    {
+                        list.Add(book);
+                    }
+                }
+            }
 
             BookListView.ItemsSource = list;
         }

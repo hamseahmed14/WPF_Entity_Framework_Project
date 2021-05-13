@@ -12,6 +12,7 @@
     <None Remove="HarryPotterOrderOfPhoenixImage.jpg" />
     <None Remove="Images\profile_icon.png" />
     <None Remove="profile_icon.png" />
+    <None Remove="ScandalInBohemia.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,6 +32,7 @@
   <ItemGroup>
     <Resource Include="ERD.png" />
     <Resource Include="profile_icon.png" />
+    <Resource Include="ScandalInBohemia.jpg" />
   </ItemGroup>
 
 </Project>

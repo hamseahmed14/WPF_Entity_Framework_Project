@@ -82,13 +82,35 @@ namespace LibraryBusiness
             var list = new List<Book>();
             foreach (var item in searchList)
             {
-                if (item.Title.Contains(searchWord))
+                if (item.Title.ToLower().Contains(searchWord.ToLower()))
                 {
                     list.Add(item);
                 }
             }
 
             return list;
+        }
+
+        public List<Book> FilterGenre(List<Book> filterList,string genre)
+        {
+            var list = new List<Book>();
+            foreach (var item in filterList)
+            {
+                if (item.Genre == genre)
+                {
+                    list.Add(item);
+                }
+            }
+            return list;
+        }
+
+        public List<Book> AddGenre(string genre) 
+        {
+            using (var db = new LibraryContext())
+            {
+                return db.Books.Where(b => b.Genre == genre).ToList();
+            }
+        
         }
 
         //public void InputBookCSV(List<string> books)

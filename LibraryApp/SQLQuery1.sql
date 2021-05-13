@@ -2,27 +2,21 @@
 
 --values
 --(
---1,
---'Harry Potter and the Philosopher''s Stone',
---'Fantasy',
---'Harry Potter has never played a sport while flying on a broomstick. He''s never worn a Cloak of Invisibility, befriended a half-giant, or helped hatch a dragon. All Harry knows is a miserable life with the Dursleys: his horrible aunt and uncle and their abominable son, Dudley. Harry''s room is a tiny Cupboard Under the Stairs, he hasn''t had a birthday party in ten years, and his birthday present is his uncle''s old socks.
+--4,
+--'A Scandal in Bohemia',
+--'Mysterie',
+--'On 20 March 1888, Dr. Watson is visiting Sherlock Holmes when a masked gentleman arrives at 221B Baker Street. Initially introducing himself as Count von Kramm, he reveals himself as Wilhelm Gottsreich Sigismond von Ormstein, Grand Duke of Cassel-Felstein and hereditary King of Bohemia, after Holmes deduces his true identity. The King explains that, five years earlier, he engaged in a secret relationship with American opera singer Irene Adler, who has since retired and now lives in London. He is set to marry a young Scandinavian princess but worries that her strictly principled family will call the marriage off should they learn of this impropriety.
 
---But all that is about to change when a mysterious letter arrives by owl messenger. A letter with an invitation to a wonderful place he never dreamed existed. There he finds not only friends, aerial sports, and magic around every corner, but a great destiny that''s been waiting for him... if Harry can survive the encounter."
-
---Until now there''s been no magic for Harry Potter. He lives with the miserable Dursleys and their abominable son, Dudley. Harry''s room is a tiny closet beneath the stairs, and he hasn''t had a birthday party in ten years. Then a mysterious letter arrives by owl messenger. A letter with an invitation to an incredible place called Hogwarts School of Witchcraft and Wizardry. There he finds not only friends, flying sports on broomsticks, and magic in everything from classes to meals.
-
---Harry Potter thinks he is an ordinary boy - until he is rescued by a beetle-eyed giant of a man, enrols at Hogwarts School of Witchcraft and Wizardry, learns to play Quidditch, and does battle in a deadly duel. The Reason, Harry Potter is a wizard!"
-
---Plot',
---10,
---10,
---'/HarryPotterPhilosoper''sStoneNewImage.jpg'
+--The King further explains that he seeks to regain a photograph of Adler and himself together which he gave to her as a token. His agents have failed to recover the photograph through various means, and an offer to pay for it was also refused. With Adler now threatening to send the photograph to his fiancée''s family, the King requests Holmes and Watson''s help in recovering it.',
+--3,
+--3,
+--'/ScandalInBohemia.jpg'
 --)
 
 
-update Books set ImageSrc = '/HarryPotterPhilosoper''sStoneNewImage.jpg' where BookId = 3
+update Books set Genre = 'Mystery' where BookId = 4
 
 
 
 select * from authors
-select * from books
+select Genre from books
