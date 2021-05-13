@@ -22,7 +22,7 @@ namespace LibraryWPF
     {
         private string cred;
 
-        List<string> list = new List<string>();
+    
         MemberCRUDManager cm = new MemberCRUDManager();
 
         
@@ -31,12 +31,7 @@ namespace LibraryWPF
         {
             InitializeComponent();
             this.cred = cred;
-
-            list.Add("Hamse");
-            list.Add("Ahmed");
-            list.Add("Mohamed");
-
-
+         
 
             BookListView.ItemsSource = cm.RetrieveAllBooks();
             
@@ -59,6 +54,17 @@ namespace LibraryWPF
                     MessageBox.Show(authorname);
                 }
             }
+        }
+
+        private void Search_click(object sender, RoutedEventArgs e)
+        {
+            
+            var searchtext = searchField.Text;
+            var booklist = cm.RetrieveAllBooks();
+
+            var list = cm.Search(booklist,searchtext);
+
+            BookListView.ItemsSource = list;
         }
     }
 

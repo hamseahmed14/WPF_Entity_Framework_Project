@@ -40,7 +40,6 @@ namespace LibraryWPF
 
             if (authCred == "Incorrect Credentials")
             {
-                MessageBox.Show(decPassword);
                 MessageBox.Show("Incorrect Credentials. Please input valid credentials");
                 UserName.Text = "";
                 Password.Clear();

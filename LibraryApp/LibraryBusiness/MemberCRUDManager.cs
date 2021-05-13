@@ -63,5 +63,45 @@ namespace LibraryBusiness
             Regex regex = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
             return regex.IsMatch(s);
         }
+
+        public void InputAuthorCSV(List<string> authors)
+        {
+            using (var db = new LibraryContext())
+            {
+                foreach (var item in authors)
+                {
+                    var newAuthor = new Author() { Name = item };
+                    db.Authors.Add(newAuthor);
+                    db.SaveChanges();
+                }
+            }
+        }
+
+        public List<Book> Search(List<Book> searchList,string searchWord)
+        {
+            var list = new List<Book>();
+            foreach (var item in searchList)
+            {
+                if (item.Title.Contains(searchWord))
+                {
+                    list.Add(item);
+                }
+            }
+
+            return list;
+        }
+
+        //public void InputBookCSV(List<string> books)
+        //{
+        //    using (var db = new LibraryContext())
+        //    {
+        //        foreach (var item in books)
+        //        {
+        //            var newBook = new Book() { Name = item };
+        //            db.Books.Add(newBook);
+        //            db.SaveChanges();
+        //        }
+        //    }
+        //}
     }
 }

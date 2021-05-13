@@ -4,9 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryWPF"
-        xmlns:model ="clr-namespace:LibraryApp;assembly=LibraryApp"
-        
-            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:model ="clr-namespace:LibraryApp;assembly=LibraryApp"   
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Background="{DynamicResource MaterialDesignPaper}"
         TextElement.FontWeight="Medium"
@@ -26,18 +25,19 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
+            <RowDefinition Height="30"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-            <ListBox x:Name="BookListView" HorizontalAlignment="Left" SelectionChanged="BookListView_SelectionChanged" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1">
+        <ListBox x:Name="BookListView" HorizontalAlignment="Left" SelectionChanged="BookListView_SelectionChanged" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Border BorderBrush="OrangeRed" BorderThickness="1">
-                    <StackPanel Orientation="Horizontal" Margin="10,10,10,10" Height="100" Width="700">
-                        <StackPanel Orientation="Vertical" Margin="0,0,20,0">
-                            <TextBlock Text="{Binding Title}"/>
-                            <TextBlock Text="{Binding Author.Name}" FontSize="7" Foreground="Orange"/>
+                    <Border BorderBrush="OrangeRed" BorderThickness="1" CornerRadius="2,2,2,2">
+                        <StackPanel Orientation="Horizontal" Margin="10,10,10,10" Height="100" Width="700">
+                            <StackPanel Orientation="Vertical" Margin="0,0,20,0">
+                                <TextBlock Text="{Binding Title}"/>
+                                <TextBlock Text="{Binding Author.Name}" FontSize="7" Foreground="Orange"/>
                                 <TextBlock Text="{Binding Description}" Width="500" MaxHeight="100" Margin="0,20,0,0" TextTrimming="WordEllipsis" TextWrapping="WrapWithOverflow" FontSize="10"  VerticalAlignment="Bottom"/>
-                        </StackPanel>
+                            </StackPanel>
                             <Image Source="{Binding ImageSrc}" Width="100" Height="150" />
                         </StackPanel>
                     </Border>
@@ -45,6 +45,10 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <TextBlock Grid.Column="1"  FontSize="40" FontWeight="Bold" Foreground="OrangeRed" HorizontalAlignment="Center"  Text="Books" TextWrapping="Wrap" VerticalAlignment="Center"/>
+        <TextBox x:Name="searchField" Grid.Column="2" HorizontalAlignment="Left" Margin="134,0,0,0" Grid.Row="1" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button
+  Width="50"
+  Content="_Submit" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="Search_click" FontSize="10" Margin="283,0,0,453" Grid.RowSpan="3"/>
 
     </Grid>
 </Window>
