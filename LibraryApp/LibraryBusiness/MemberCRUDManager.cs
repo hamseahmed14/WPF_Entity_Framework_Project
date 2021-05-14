@@ -113,6 +113,65 @@ namespace LibraryBusiness
         
         }
 
+        public Book GetBookDetails(int id)
+        {
+            using (var db = new LibraryContext())
+            {
+
+                return db.Books.Include(b => b.Author).Where(b => b.BookId == id).FirstOrDefault();
+                
+            }
+        
+        }
+
+        public Book TransferObject(Object book)
+        {
+            return (Book)book;
+        }
+
+        public void CreateLoanRequest(int memberId, int bookId)
+        {
+            using (var db = new LibraryContext())
+            {
+                var date = DateTime.Now;
+                var returndate = date.AddDays(14);
+                var loan = new Loan() { MemberId = memberId, LoanDate = date };
+
+                var loandetail = new LoanDetail() { BookId = bookId, Loan = loan, ReturnDate = returndate, Request = "Pending" };
+
+                db.LoanDetails.Add(loandetail);
+                db.SaveChanges();
+            }
+
+        }
+
+       public int GetMemberId(string username)
+        {
+            using (var db = new LibraryContext())
+            {
+                return db.Members.Where(m => m.Username == username).Select(m => m.MemberId).FirstOrDefault();
+            }
+        }
+
+        public void RemoveLoan(int memberId,int bookId)
+        {
+            using (var db = new LibraryContext())
+            {
+                var loanid = db.LoanDetails.Where(l => l.BookId == bookId).Select(l => l.LoanId).FirstOrDefault();
+                var selectedLoan = db.Loans.Where(l => l.LoanId == loanid && l.MemberId == memberId).FirstOrDefault();
+                db.Loans.Remove(selectedLoan);
+                db.SaveChanges();
+            }
+        }
+
+        public string RequestedState(int memberId, int bookId)
+        {
+            using (var db = new LibraryContext())
+            {
+                return db.LoanDetails.Include(l => l.Loan).Where(l => l.BookId == bookId && l.Loan.MemberId == memberId).Select(l => l.Request).FirstOrDefault();
+            }
+        }
+
         //public void InputBookCSV(List<string> books)
         //{
         //    using (var db = new LibraryContext())

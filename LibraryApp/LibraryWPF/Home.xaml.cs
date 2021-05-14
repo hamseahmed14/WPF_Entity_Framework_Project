@@ -50,8 +50,11 @@ namespace LibraryWPF
                 cm.SetSelectedBook(BookListView.SelectedItem);
                 if (cm.SelectedBook != null)
                 {
-                    var authorname = cm.SelectedBook.Author.Name;
-                    MessageBox.Show(authorname);
+                    var bookId = cm.SelectedBook.BookId;
+                    BookDetails windowBook = new BookDetails(cm.SelectedBook,cred);
+                    windowBook.Show();
+                   
+                    
                 }
             }
         }
