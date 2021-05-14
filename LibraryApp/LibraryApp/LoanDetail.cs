@@ -12,6 +12,7 @@ namespace LibraryApp
         public int BookId { get; set; }
         public int LoanId { get; set; }
         public DateTime ReturnDate { get; set; }
+        public string Request { get; set; }
 
         public virtual Book Book { get; set; }
         public virtual Loan Loan { get; set; }
