@@ -121,6 +121,10 @@ Next time I would like to spend more time on making the quality of code good and
 
 ### Sprint 4
 
+###### Kanban Board start of sprint
+
+![Kanboard start sprint 4](/images/sprint_4_backlog.PNG)
+
 ###### Sprint Goals
 
 - [x] User Story 3.1
@@ -129,9 +133,9 @@ Next time I would like to spend more time on making the quality of code good and
 - [x] User Story 3.4
 - [x] User story 3.5
 
-###### Kanban Board start of sprint
+###### Kanban Board end of sprint
 
-![Kanboard start sprint 4](/images/sprint_4_backlog.PNG)
+![Kanban board end sprint 4](/images/sprint_4_backlog_done.PNG)
 
 ###### Sprint Review
 
@@ -142,3 +146,29 @@ All the user stories in sprint 4 have been completed. A book details page and re
 Sprint 4 went very smoothly. All the sprint goals have been completed, which leaves only a few user stories left.
 
 Next time I would like to spend more time on unit testing.
+
+
+
+### Sprint 5
+
+###### Kanban Board start of sprint
+
+![Kanban Board sprint 5 start](/images/sprint_5_backlog.PNG)
+
+###### Sprint Goals
+
+- [x] Task 2.1.2
+- [x] User Story 4.1
+- [x] User Story 4.2
+
+![Kanban Board end of sprint 5](/images/sprint_5_backlog_done.PNG)
+
+###### Sprint Review
+
+All the User Stories of sprint 5 have been completed. The sprint consisted of task 2.1.2, which is populating the database with more books. User Story 4.1, which required the creation of an admin account and admin portal where the loan details are displayed. The last user Story was 4.2, which required adding accept and deny functionality so that the admin can deny or accept a loan request.
+
+###### Sprint Retrospective
+
+Sprint 5 was a very light sprint. This sprint completed the functional features of the application. There were no blocks that hindered the development of sprint 5. 
+
+Since the application is mostly complete the next sprint will mostly focus heavily on documentation. 

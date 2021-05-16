@@ -139,8 +139,9 @@ namespace LibraryTests
 
             _crudmanager.SetSelectedLoanDetail(l);
 
-            Assert.AreEqual(l,_crudmanager.SelectedLoan)
+            Assert.AreEqual(l, _crudmanager.SelectedLoan);
         }
+
 
 
         [TearDown]
