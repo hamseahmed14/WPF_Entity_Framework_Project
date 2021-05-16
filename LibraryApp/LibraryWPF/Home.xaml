@@ -12,7 +12,7 @@
         TextElement.FontSize="14"
         FontFamily="{materialDesign:MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="Home" Height="600" Width="1000">
+        Title="Home" Height="600" Width="1000" WindowStartupLocation="CenterScreen">
 
     <Window.DataContext>
         <model:Book/>
@@ -53,14 +53,39 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <TextBlock Grid.Column="1"  FontSize="40" FontWeight="Bold" Foreground="OrangeRed" HorizontalAlignment="Center"  Text="Books" TextWrapping="Wrap" VerticalAlignment="Center"/>
-        <TextBox x:Name="searchField" Background="White" materialDesign:HintAssist.Hint="Search Books" Grid.Column="2" HorizontalAlignment="Right" Margin="0,0,60,0" TextWrapping="NoWrap" FontSize="10" Grid.Row="1"  VerticalAlignment="Center" Width="160"/>
-        <Button
-    Width="50"
-  Content="Search" Height="20"  Grid.Column="2"  HorizontalAlignment="right" VerticalAlignment="Center" Click="Search_click" FontSize="5"  Grid.Row="1"/>
+        <TextBox x:Name="searchField" Background="White" materialDesign:HintAssist.Hint="Search Books" Grid.Column="2" HorizontalAlignment="Right" Margin="0,0,60,0" TextWrapping="NoWrap" FontSize="10" Grid.Row="1"  VerticalAlignment="Center" Width="160" TextChanged="searchField_TextChanged"/>
+    
         <Rectangle   Height="1" Grid.ColumnSpan="3" Grid.Row="1" Stroke="Black" VerticalAlignment="Bottom" Width="900" HorizontalAlignment="Center"/>
-        <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="2" Text="Filter" FontSize="20" FontWeight="Bold" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <CheckBox Content="Fantasy" x:Name="FantasyCheckBox" HorizontalAlignment="Left" Margin="87,51,0,0" Grid.Row="2" VerticalAlignment="Top" ClickMode="Press" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" />
-        <CheckBox Content="Mystery" x:Name="MysteryCheckBox" HorizontalAlignment="Left" Margin="240,51,0,0" Grid.Row="2" VerticalAlignment="Top" ClickMode="Press" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+  
         <Frame  NavigationUIVisibility="Hidden" x:Name="Main" Margin="0,0,0,0" Panel.ZIndex="0" />
+        <Button Content="Sign Out" Grid.Column="2" FontSize="10" VerticalAlignment="Center" Click="SignOut_Button_Click"  HorizontalAlignment="right" Width="70"/>
+        <Grid Grid.Column="0" Grid.Row="2" Height="500" VerticalAlignment="top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="250"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock HorizontalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="0" Text="Genre" FontSize="20" FontWeight="Bold" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <CheckBox Content="Fantasy" x:Name="FantasyCheckBox" Margin="10" HorizontalAlignment="left"  Grid.Row="1" VerticalAlignment="Top" ClickMode="Press" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" />
+            <CheckBox Content="Mystery" x:Name="MysteryCheckBox" HorizontalAlignment="left"  Grid.Row="1" Grid.Column="1" VerticalAlignment="center" ClickMode="Press" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+            <CheckBox Content="Adventure" x:Name="AdventureCheckBox" HorizontalAlignment="left"  Grid.Row="2" Grid.Column="1" VerticalAlignment="center" ClickMode="Press" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+            <CheckBox Content="Sci-Fi" x:Name="SciFiCheckBox" Margin="10" HorizontalAlignment="left"  Grid.Row="3" Grid.Column="0" VerticalAlignment="Top" ClickMode="Press" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+            <CheckBox Content="Romance" x:Name="RomanceCheckBox" HorizontalAlignment="left"  Grid.Row="3" Grid.Column="1" VerticalAlignment="center" ClickMode="Press" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+            <CheckBox Content="Thriller" x:Name="ThrillerCheckBox" Margin="10" HorizontalAlignment="left"  Grid.Row="4" Grid.Column="0" VerticalAlignment="Top" ClickMode="Press" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+            <CheckBox Content="Crime" x:Name="CrimeCheckBox" HorizontalAlignment="left"  Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" ClickMode="Press" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+            <CheckBox Content="Horror" x:Name="HorrorCheckBox" Margin="10" HorizontalAlignment="left"  Grid.Row="2" Grid.Column="0" VerticalAlignment="Top" ClickMode="Press" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+            <Label Content="My Books" HorizontalAlignment="Center"  Grid.Row="5" VerticalAlignment="Center" Grid.ColumnSpan="2"  FontSize="20" FontWeight="Bold"/>
+            <ListBox x:Name="MembersBookList" Grid.Row="6" Grid.ColumnSpan="2" FontSize="10"/>
+
+        </Grid>
     </Grid>
 </Window>

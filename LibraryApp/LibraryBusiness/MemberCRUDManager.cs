@@ -171,12 +171,22 @@ namespace LibraryBusiness
             }
         }
 
+        public void DenyLoan(int loanDetailId)
+        {
+            using (var db = new LibraryContext())
+            {
+                SelectedLoan = db.LoanDetails.Find(loanDetailId);
+                SelectedLoan.Request = "Approved";
+                db.SaveChanges();
+            }
+        }
+
         public void ApproveLoan(int LoanDetailId)
         {
             using (var db = new LibraryContext())
             {
                 SelectedLoan = db.LoanDetails.Find(LoanDetailId);
-                SelectedLoan.Request = "Approve";
+                SelectedLoan.Request = "Approved";
                 db.SaveChanges();
             }
         }
@@ -197,6 +207,16 @@ namespace LibraryBusiness
                 return db.LoanDetails.Include(l => l.Loan).ThenInclude(l => l.Member).Where(l => l.Request == "Pending").Include(l => l.Book).ToList();
             }
         }
+
+        public List<LoanDetail> GetMemberBooks(int memberId)
+        {
+            using (var db = new LibraryContext())
+            {
+                return db.LoanDetails.Include(b => b.Book).Include(l => l.Loan).ThenInclude(m => m.Member).Where(m => m.Loan.Member.MemberId == memberId).ToList();
+            }
+        }
+
+        
 
         
 

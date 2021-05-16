@@ -42,7 +42,7 @@ namespace LibraryWPF
                     cm.ApproveLoan(loanDetailId);
                     break;
                 case "Deny":
-                    cm.RemoveLoan(memberId,bookId);
+                    cm.DenyLoan(loanDetailId);
                     break;
                 default:
                     break;
@@ -87,12 +87,10 @@ namespace LibraryWPF
         }
 
         private void SignOut_Button_Click(object sender, RoutedEventArgs e)
-        {
-            
+        {           
             MainWindow window = new MainWindow();
             window.Show();
-            this.Close();
-           
+            this.Close();     
         }
     }
 }

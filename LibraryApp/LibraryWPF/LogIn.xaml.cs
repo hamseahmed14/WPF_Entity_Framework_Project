@@ -22,14 +22,18 @@ namespace LibraryWPF
     public partial class LogIn : Page
     {
         public string Cred { get; set; }
+        
+        
 
         public LogIn()
         {
+            
             InitializeComponent();
         }
 
         private void SubmitBtn_Click(object sender, RoutedEventArgs e)
         {
+            Window parentWindow = Window.GetWindow(this);
             var username = UserName.Text.Trim();
             var password = Password.Password.Trim();
 
@@ -52,12 +56,15 @@ namespace LibraryWPF
                 {
                     case 'M':
                         Home windowHome = new Home(Cred);
-                        Application.Current.MainWindow.Close();
+                     
+                        parentWindow.Close();
                         windowHome.Show();
                         break;
                     case 'A':
                         AdminPortal adminPortal = new AdminPortal();
-                        Application.Current.MainWindow.Close();
+                        //Window parentWindow = Window.GetWindow(this);
+                        //parentWindow.Close();
+                        parentWindow.Close();
                         adminPortal.Show();
                         break;
                         //case 'A':

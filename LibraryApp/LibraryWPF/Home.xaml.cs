@@ -34,7 +34,7 @@ namespace LibraryWPF
          
 
             BookListView.ItemsSource = cm.RetrieveAllBooks();
-            
+            MembersBookList.ItemsSource = cm.GetMemberBooks(cm.GetMemberId(cred));
             
 
           //  var d = cm.RetrieveAllBooks();
@@ -53,27 +53,28 @@ namespace LibraryWPF
                     var bookId = cm.SelectedBook.BookId;
                     BookDetails windowBook = new BookDetails(cm.SelectedBook,cred);
                     windowBook.Show();
+                    this.Close();
                    
                     
                 }
             }
         }
 
-        private void Search_click(object sender, RoutedEventArgs e)
-        {
+        //private void Search_click(object sender, RoutedEventArgs e)
+        //{
             
-            var searchtext = searchField.Text;
-            var booklist = cm.RetrieveAllBooks();
+        //    var searchtext = searchField.Text;
+        //    var booklist = cm.RetrieveAllBooks();
 
-            var list = cm.Search(booklist,searchtext);
+        //    var list = cm.Search(booklist,searchtext);
 
-            BookListView.ItemsSource = list;
-        }
+        //    BookListView.ItemsSource = list;
+        //}
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
             List<Object> filteredList = new List<Object>();
-            List<CheckBox> checkBoxList = new List<CheckBox> { FantasyCheckBox, MysteryCheckBox };
+            List<CheckBox> checkBoxList = new List<CheckBox> { FantasyCheckBox, MysteryCheckBox, AdventureCheckBox, SciFiCheckBox ,RomanceCheckBox, ThrillerCheckBox, CrimeCheckBox, HorrorCheckBox };
             var list = cm.RetrieveAllBooks();
 
             foreach (var checkBox in checkBoxList)
@@ -109,6 +110,23 @@ namespace LibraryWPF
                     }
                 }
             }
+
+            BookListView.ItemsSource = list;
+        }
+
+        private void SignOut_Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow window = new MainWindow();
+            window.Show();
+            this.Close();
+        }
+
+        private void searchField_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var searchtext = searchField.Text;
+            var booklist = cm.RetrieveAllBooks();
+
+            var list = cm.Search(booklist, searchtext);
 
             BookListView.ItemsSource = list;
         }

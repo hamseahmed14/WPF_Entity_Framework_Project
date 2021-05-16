@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryWPF"
         mc:Ignorable="d"
-        Title="MainWindow" MinHeight="600" MinWidth="700" SizeToContent="WidthAndHeight">
+        Title="MainWindow" MinHeight="600" MinWidth="700" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel   Orientation="Horizontal" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right" Panel.ZIndex="1">
             <Button  Content="Log in" MinWidth="100" Click="BtnClickLogIn"  Style="{StaticResource MaterialDesignFlatButton}"/>

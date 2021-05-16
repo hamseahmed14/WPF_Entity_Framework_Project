@@ -22,6 +22,7 @@ namespace LibraryWPF
     {
         public MainWindow()
         {
+            
             InitializeComponent();
 
             Main.Content = new LogIn();

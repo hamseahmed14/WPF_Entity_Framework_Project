@@ -68,14 +68,14 @@ namespace LibraryTests
         }
 
         [Test]
-        public void WhenCorrectAuth_CorrectMemberIsReturned() 
+        public void WhenCorrectAuth_CorrectMemberIsReturned()
         {
             _crudmanager.CreateMember("Hamse", "Ahmed", "Hamse", "hamse-27@hotmail.com", "21A", "London Road", "leicester", "LE8 0SU", "password");
 
             AuthenticationManager auth = new AuthenticationManager();
-            var result = auth.AuthIsCorrect("Hamse","password");
+            var result = auth.AuthIsCorrect("Hamse", "password");
 
-            Assert.AreEqual("Hamse",result);
+            Assert.AreEqual("Hamse", result);
 
         }
 
@@ -90,6 +90,9 @@ namespace LibraryTests
             Assert.AreEqual("Incorrect Credentials", result);
 
         }
+
+        [Test]
+        public void 
 
 
 

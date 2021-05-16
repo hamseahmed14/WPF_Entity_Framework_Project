@@ -95,5 +95,11 @@ namespace LibraryWPF
                     break;
             }
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Home windowHome = new Home(cred);
+            windowHome.Show();
+        }
     }   
 }

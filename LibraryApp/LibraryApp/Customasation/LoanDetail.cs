@@ -10,7 +10,12 @@ namespace LibraryApp
     {
         public override string ToString()
         {
-            return $"{Loan.Member.FirstName} {Loan.Member.LastName} - {Book.Title}";
+            return $"{Book.Title} - {Request}";
+        }
+
+        public string Details()
+        {
+            return $"{Book.Title} - {Request}";
         }
     }
 }
