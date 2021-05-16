@@ -12,6 +12,7 @@ namespace LibraryBusiness
     public class MemberCRUDManager
     {
         public Book SelectedBook { get; set; }
+        public LoanDetail SelectedLoan { get; set; }
 
         public void CreateMember(string firstname, string lastname,string username , string email, string phonenumber, string housenumber, string street, string city, string postalcode, string password)
         {
@@ -55,6 +56,12 @@ namespace LibraryBusiness
         public void SetSelectedBook(object selectedItem)
         {
             SelectedBook = (Book)selectedItem;
+        }
+
+
+        public void SetSelectedLoanDetail(object selectedItem)
+        {
+            SelectedLoan = (LoanDetail)selectedItem;
         }
 
 
@@ -164,6 +171,16 @@ namespace LibraryBusiness
             }
         }
 
+        public void ApproveLoan(int LoanDetailId)
+        {
+            using (var db = new LibraryContext())
+            {
+                SelectedLoan = db.LoanDetails.Find(LoanDetailId);
+                SelectedLoan.Request = "Approve";
+                db.SaveChanges();
+            }
+        }
+
         public string RequestedState(int memberId, int bookId)
         {
             using (var db = new LibraryContext())
@@ -171,6 +188,17 @@ namespace LibraryBusiness
                 return db.LoanDetails.Include(l => l.Loan).Where(l => l.BookId == bookId && l.Loan.MemberId == memberId).Select(l => l.Request).FirstOrDefault();
             }
         }
+
+        public List<LoanDetail> GetAllLoans()
+        {
+            using (var db  = new LibraryContext())
+            {
+
+                return db.LoanDetails.Include(l => l.Loan).ThenInclude(l => l.Member).Where(l => l.Request == "Pending").Include(l => l.Book).ToList();
+            }
+        }
+
+        
 
         //public void InputBookCSV(List<string> books)
         //{

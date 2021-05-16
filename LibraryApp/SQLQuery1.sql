@@ -1,4 +1,4 @@
-﻿--insert into Books
+﻿	--insert into Books
 
 --values
 --(
@@ -27,3 +27,22 @@
 select * from loans
 select * from LoanDetails
 
+select * from members
+
+--insert into Members
+
+--values
+--(
+--'admin',
+--'admin',
+--'admin@library.com',
+--01837483212,
+--'32',
+--'London Road',
+--'Leicester',
+--'LE8 9SA',
+--'A',
+--'admin',
+--'DJqeCF2q+gwuHPxNw6+apA=='
+
+--)

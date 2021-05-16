@@ -55,12 +55,17 @@ namespace LibraryWPF
                         Application.Current.MainWindow.Close();
                         windowHome.Show();
                         break;
-                    //case 'A':
-                    //    Portal windowPortal = new Portal();
-                    //    Application.Current.MainWindow.Close();
-                    //    windowPortal.Show();
-                    //    break;
-                  
+                    case 'A':
+                        AdminPortal adminPortal = new AdminPortal();
+                        Application.Current.MainWindow.Close();
+                        adminPortal.Show();
+                        break;
+                        //case 'A':
+                        //    Portal windowPortal = new Portal();
+                        //    Application.Current.MainWindow.Close();
+                        //    windowPortal.Show();
+                        //    break;
+
                 }
 
 

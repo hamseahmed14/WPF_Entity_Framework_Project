@@ -1,0 +1,45 @@
+﻿<Window x:Class="LibraryWPF.AdminPortal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LibraryWPF"
+        mc:Ignorable="d"
+        Title="AdminPortal" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Member:" Grid.Row="0" Grid.Column="0"/>
+            <Label Content="Book:" Grid.Row="1" Grid.Column="0"/>
+            <Label Content="Books Available:" Grid.Row="2" Grid.Column="0"/>
+            <Label Content="Status" Grid.Row="3" Grid.Column="0"/>
+            <TextBlock x:Name="MemberNametxt" Grid.Row="0" Grid.Column="1" Background="AliceBlue"/>
+            <TextBlock x:Name="BookNametxt" Grid.Row="1" Grid.Column="1" Background="AliceBlue"/>
+            <TextBlock x:Name="AvailableCounttxt" Grid.Row="2" Grid.Column="1" Background="AliceBlue"/>
+            <ComboBox x:Name="ComboBoxBookCount" Grid.Column="1" HorizontalAlignment="right" Grid.Row="3" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBoxBookCount_SelectionChanged"/>
+            <Button Content="Submit" Grid.Column="1" HorizontalAlignment="Left" Margin="85,23,0,0" Grid.Row="4" VerticalAlignment="Top" Click="Submit_Click"/>
+
+        </Grid>
+        <Label Grid.Row="0" Grid.Column="0" Content="Admin Portal" FontSize="40" Foreground="OrangeRed" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
+        <ListBox x:Name="AdminListBox" Grid.Row="1" Background="AliceBlue" SelectionChanged="AdminListBox_SelectionChanged"/>
+        <Button Content="Sign Out" Grid.Column="1" FontSize="10" VerticalAlignment="Center" Click="SignOut_Button_Click" Margin="330,0,0,0" HorizontalAlignment="Left" Width="70"/>
+    </Grid>
+</Window>

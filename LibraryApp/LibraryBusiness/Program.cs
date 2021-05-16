@@ -10,7 +10,7 @@ namespace LibraryBusiness
     {
         static void Main(string[] args)
         {
-            string[] csvLines = System.IO.File.ReadAllLines(@"C:\Users\hamse\github\LibraryBooks.csv");
+          //  string[] csvLines = System.IO.File.ReadAllLines(@"C:\Users\hamse\github\LibraryBooks.csv");
 
             //var books = new List<string>();
 
@@ -23,23 +23,26 @@ namespace LibraryBusiness
 
             //books.ForEach(a => Console.WriteLine(a));
 
-            //var cm = new MemberCRUDManager();
+           var cm = new MemberCRUDManager();
 
             // cm.InputAuthorCSV(student);
 
-            for (int i = 0; i < csvLines.Length; i++)
-            {
+            //for (int i = 0; i < csvLines.Length; i++)
+            //{
 
-                string[] data = csvLines[i].Split('|');
-                for (int j = 0; j < data.Length; j++)
-                {
-                    Console.WriteLine(data[j]);
-                }
-     
-
-            }
+            //    string[] data = csvLines[i].Split('|');
+            //    for (int j = 0; j < data.Length; j++)
+            //    {
+            //        Console.WriteLine(data[j]);
+            //    }
 
 
+            //}
+
+
+            var c = Crypto.Encrypt("password");
+
+            Console.WriteLine(c);
 
         }
     }
