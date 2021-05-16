@@ -1,6 +1,7 @@
 using LibraryApp;
 using LibraryBusiness;
 using NUnit.Framework;
+using System;
 using System.Linq;
 
 namespace LibraryTests
@@ -92,9 +93,54 @@ namespace LibraryTests
         }
 
         [Test]
-        public void 
+        public void WhenListOfAllBooksIsRetrieved_TheListIsNotNull()
+        {
 
+            var bookCount = _crudmanager.RetrieveAllBooks().Count;
 
+            Assert.AreEqual(true, bookCount > 0);
+        }
+
+        [Test]
+        public void WhenListOfAllMembersIsRetrieved_TheListIsNotNull()
+        {
+
+            var memberCount = _crudmanager.RetrieveAllMembers().Count;
+
+            Assert.AreEqual(true, memberCount > 0);
+        }
+
+        [Test]
+        public void WhenListOfAllLoansIsRetrieved_TheListIsNotNull()
+        {
+
+            var loanCount = _crudmanager.RetrieveAllMembers().Count;
+
+            Assert.AreEqual(true, loanCount > 0);
+        }
+
+        [Test]
+        public void WhenSelectedBookIsSet_SelectedBookIsThatValue()
+        {
+            Book b = new Book() {BookId = 1, AuthorId = 1, Title = "This", 
+                Genre = "Sci-Fi", Description = "Lorem Ipsum", Available = 10,
+                Quantity = 3, ImageSrc = "Image"};
+
+            _crudmanager.SetSelectedBook(b);
+
+            Assert.AreEqual(b, _crudmanager.SelectedBook);
+
+        }
+
+        [Test]
+        public void WhenSelectedLoanDetailIsSet_SelectedLoanIsThatValue()
+        {
+            LoanDetail l = new LoanDetail() { LoanDetailId = 3, LoanId = 1, BookId = 2, ReturnDate = DateTime.Now, Request = "Pending" };
+
+            _crudmanager.SetSelectedLoanDetail(l);
+
+            Assert.AreEqual(l,_crudmanager.SelectedLoan)
+        }
 
 
         [TearDown]
