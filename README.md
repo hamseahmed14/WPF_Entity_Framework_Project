@@ -117,3 +117,28 @@ In terms of time management sprint 3 went better than sprint 2. This is because 
 
 Next time I would like to spend more time on making the quality of code good and DRY.
 
+
+
+### Sprint 4
+
+###### Sprint Goals
+
+- [x] User Story 3.1
+- [x] User Story 3.2
+- [x] User Story 3.3
+- [x] User Story 3.4
+- [x] User story 3.5
+
+###### Kanban Board start of sprint
+
+![Kanboard start sprint 4](/images/sprint_4_backlog.PNG)
+
+###### Sprint Review
+
+All the user stories in sprint 4 have been completed. A book details page and request functions have been added to the project.
+
+###### Sprint Retrospective
+
+Sprint 4 went very smoothly. All the sprint goals have been completed, which leaves only a few user stories left.
+
+Next time I would like to spend more time on unit testing.

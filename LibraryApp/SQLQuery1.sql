@@ -14,14 +14,16 @@
 --)
 
 
---update Books set Genre = 'Mystery' where BookId = 4
+--update Books set ImageSrc = '/HarryPotterPhilosoperStoneNewImage.jpg' where BookId = 3
+
 
 
 
 --select * from authors
 --select Genre from books
 
-select * from members
-select * from books
+--select * from members
+
 select * from loans
 select * from LoanDetails
+
