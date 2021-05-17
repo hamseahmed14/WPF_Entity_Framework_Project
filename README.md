@@ -161,6 +161,8 @@ Next time I would like to spend more time on unit testing.
 - [x] User Story 4.1
 - [x] User Story 4.2
 
+###### Kanban Board end of sprint
+
 ![Kanban Board end of sprint 5](/images/sprint_5_backlog_done.PNG)
 
 ###### Sprint Review
@@ -172,3 +174,31 @@ All the User Stories of sprint 5 have been completed. The sprint consisted of ta
 Sprint 5 was a very light sprint. This sprint completed the functional features of the application. There were no blocks that hindered the development of sprint 5. 
 
 Since the application is mostly complete the next sprint will mostly focus heavily on documentation. 
+
+
+
+### Sprint 6
+
+###### Kanban Board start of sprint
+
+![Kanban board at start](/images/sprint_6_backlog.PNG)
+
+###### Sprint Goals
+
+- [x] Task 4 
+- [x] Task 5
+- [x] Task 6
+- [x] Task 7
+
+###### Kanban Board end of sprint
+
+![Kanban Board end of sprint](/images/sprint_6_backlog_done.PNG)
+
+###### Sprint Review
+
+All the tasks of sprint 6 have been completed. The sprint consisted of task 4, which consisted on doing a final GUI test. Task 5, which required the creation of a class diagram for the model layer. Task 6, which was finishing of the last unit tests and make sure all the tests pass. Finally there is sprint 7 where the ReadMe is completed.
+
+###### Sprint Retrospective
+
+There was not a lot of tasks for user sprint 6, but it required some time to finish testing the application. With this sprint I have finished off the final functional requirement. This sprint was rather short, but there was a lot of outside deadlines that interfered with the sprint. Overall, the sprint was a success.
+

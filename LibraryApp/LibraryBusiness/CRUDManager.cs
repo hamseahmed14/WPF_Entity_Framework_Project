@@ -45,6 +45,14 @@ namespace LibraryBusiness
             }
         }
 
+        public Book RetrieveBook(string Title)
+        {
+            using (var db = new LibraryContext())
+            {
+                return db.Books.Where(b => b.Title == Title).FirstOrDefault();
+            }
+        }
+
         public List<Member> RetrieveAllMembers()
         {
             using (var db = new LibraryContext())

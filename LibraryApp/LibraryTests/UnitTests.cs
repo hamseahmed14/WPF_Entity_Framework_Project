@@ -24,7 +24,7 @@ namespace LibraryTests
 
                 var selectedBook =
                     from b in db.Books
-                    where b.BookId == 100
+                    where b.Title == "This"
                     select b;
 
                 db.Books.RemoveRange(selectedBook);
@@ -159,7 +159,6 @@ namespace LibraryTests
             Assert.AreEqual(l, _crudmanager.SelectedLoan);
         }
 
-
         [TearDown]
         public void TearDown()
         {
@@ -175,7 +174,7 @@ namespace LibraryTests
 
                 var selectedBook =
                    from b in db.Books
-                   where b.BookId == 100
+                   where b.Title == "ThiS"
                    select b;
 
                 db.Books.RemoveRange(selectedBook);
