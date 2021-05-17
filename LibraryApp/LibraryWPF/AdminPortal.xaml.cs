@@ -49,6 +49,10 @@ namespace LibraryWPF
                     break;
             }
 
+            MemberNametxt.Text = "";
+            BookNametxt.Text = "";
+            AvailableCounttxt.Text = "";
+            ComboBoxBookCount.SelectedItem = null;
             
         }
 
@@ -70,6 +74,8 @@ namespace LibraryWPF
                   
                 }
             }
+
+            AdminListBox.ItemsSource = cm.GetAllLoans();
         }
 
         private void ComboBoxBookCount_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -20,6 +20,15 @@ namespace LibraryTests
                 select m;
 
                 db.Members.RemoveRange(selectedCustomers);
+
+
+                var selectedBook =
+                    from b in db.Books
+                    where b.BookId == 100
+                    select b;
+
+                db.Books.RemoveRange(selectedBook);
+
                 db.SaveChanges();
             }
         }
@@ -122,9 +131,17 @@ namespace LibraryTests
         [Test]
         public void WhenSelectedBookIsSet_SelectedBookIsThatValue()
         {
-            Book b = new Book() {BookId = 1, AuthorId = 1, Title = "This", 
-                Genre = "Sci-Fi", Description = "Lorem Ipsum", Available = 10,
-                Quantity = 3, ImageSrc = "Image"};
+            Book b = new Book()
+            {
+                BookId = 1,
+                AuthorId = 1,
+                Title = "This",
+                Genre = "Sci-Fi",
+                Description = "Lorem Ipsum",
+                Available = 10,
+                Quantity = 3,
+                ImageSrc = "Image"
+            };
 
             _crudmanager.SetSelectedBook(b);
 
@@ -143,7 +160,6 @@ namespace LibraryTests
         }
 
 
-
         [TearDown]
         public void TearDown()
         {
@@ -155,6 +171,14 @@ namespace LibraryTests
                 select m;
 
                 db.Members.RemoveRange(selectedCustomers);
+
+
+                var selectedBook =
+                   from b in db.Books
+                   where b.BookId == 100
+                   select b;
+
+                db.Books.RemoveRange(selectedBook);
                 db.SaveChanges();
             }
         }

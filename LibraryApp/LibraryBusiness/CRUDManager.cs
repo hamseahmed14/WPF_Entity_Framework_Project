@@ -36,6 +36,15 @@ namespace LibraryBusiness
             }
         }
 
+        public void CreateBook(Book book)
+        {
+            using (var db = new LibraryContext())
+            {
+                db.Books.Add(book);
+                db.SaveChanges();
+            }
+        }
+
         public List<Member> RetrieveAllMembers()
         {
             using (var db = new LibraryContext())
@@ -176,7 +185,7 @@ namespace LibraryBusiness
             using (var db = new LibraryContext())
             {
                 SelectedLoan = db.LoanDetails.Find(loanDetailId);
-                SelectedLoan.Request = "Approved";
+                SelectedLoan.Request = "Denied";
                 db.SaveChanges();
             }
         }

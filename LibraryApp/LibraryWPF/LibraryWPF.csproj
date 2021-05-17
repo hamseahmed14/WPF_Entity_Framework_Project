@@ -9,17 +9,14 @@
   <ItemGroup>
     <None Remove="ERD.png" />
     <None Remove="HarryPotterAndGobletOfFireImage.jpg" />
-    <None Remove="HarryPotterOrderOfPhoenixImage.jpg" />
     <None Remove="HarryPotterPhilosoperStoneNewImage.jpg" />
     <None Remove="Images\profile_icon.png" />
-    <None Remove="profile_icon.png" />
     <None Remove="ScandalInBohemia.jpg" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="HarryPotterAndGobletOfFireImage.jpg" />
-    <Resource Include="HarryPotterOrderOfPhoenixImage.jpg" />
-    <Resource Include="HarryPotterPhilosoperStoneNewImage.jpg" />
+    <Resource Include="Book_Images\HarryPotterAndGobletOfFireImage.jpg" />
+    <Resource Include="Book_Images\HarryPotterPhilosoperStoneNewImage.jpg" />
     <Resource Include="Images\profile_icon.png" />
   </ItemGroup>
 
@@ -32,9 +29,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="ERD.png" />
-    <Resource Include="profile_icon.png" />
-    <Resource Include="ScandalInBohemia.jpg" />
+    <Resource Include="Images\ERD.png" />
+    <Resource Include="Book_Images\ScandalInBohemia.jpg" />
   </ItemGroup>
 
 </Project>
