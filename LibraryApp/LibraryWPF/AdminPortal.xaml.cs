@@ -23,7 +23,7 @@ namespace LibraryWPF
 
     public partial class AdminPortal : Window
     {
-        MemberCRUDManager cm = new MemberCRUDManager();
+        CRUDManager cm = new CRUDManager();
         public AdminPortal()
         {
       
@@ -40,6 +40,7 @@ namespace LibraryWPF
             {
                 case "Approve":
                     cm.ApproveLoan(loanDetailId);
+                    cm.DecreaseAvailable(bookId);
                     break;
                 case "Deny":
                     cm.DenyLoan(loanDetailId);

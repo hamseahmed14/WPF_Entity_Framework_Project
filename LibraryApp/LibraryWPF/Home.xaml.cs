@@ -23,7 +23,7 @@ namespace LibraryWPF
         private string cred;
         
     
-        MemberCRUDManager cm = new MemberCRUDManager();
+        CRUDManager cm = new CRUDManager();
 
         
 

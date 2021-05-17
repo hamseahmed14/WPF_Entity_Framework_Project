@@ -8,7 +8,7 @@ namespace LibraryTests
 {
     public class RegistrationTests
     {
-        MemberCRUDManager _crudmanager = new MemberCRUDManager();
+        CRUDManager _crudmanager = new CRUDManager();
         [SetUp]
         public void Setup()
         {

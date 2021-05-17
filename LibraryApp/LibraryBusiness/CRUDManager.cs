@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace LibraryBusiness
 {
-    public class MemberCRUDManager
+    public class CRUDManager
     {
         public Book SelectedBook { get; set; }
         public LoanDetail SelectedLoan { get; set; }
@@ -188,6 +188,15 @@ namespace LibraryBusiness
                 SelectedLoan = db.LoanDetails.Find(LoanDetailId);
                 SelectedLoan.Request = "Approved";
                 db.SaveChanges();
+            }
+        }
+
+        public void DecreaseAvailable(int bookId)
+        {
+            using (var db = new LibraryContext())
+            {
+                SelectedBook = db.Books.Find(bookId);
+                SelectedBook.Available = SelectedBook.Available -1;
             }
         }
 

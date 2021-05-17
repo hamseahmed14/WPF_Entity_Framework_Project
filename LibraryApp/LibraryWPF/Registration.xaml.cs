@@ -21,7 +21,7 @@ namespace LibraryWPF
     /// </summary>
     public partial class Registration : Page
     {
-        MemberCRUDManager cm = new MemberCRUDManager();
+        CRUDManager cm = new CRUDManager();
         public Registration()
         {
             InitializeComponent();

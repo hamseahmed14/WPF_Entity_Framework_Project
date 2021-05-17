@@ -20,7 +20,7 @@ namespace LibraryWPF
     /// </summary>
     public partial class BookDetails : Window
     {
-        private MemberCRUDManager cm = new MemberCRUDManager();
+        private CRUDManager cm = new CRUDManager();
         private Object bookobject;
         private string cred;
         private int _bookId;

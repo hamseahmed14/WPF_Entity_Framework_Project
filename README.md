@@ -6,7 +6,7 @@ The admin can add , remove and update books on the application. Furthermore the 
 
 # Class Diagram
 
-
+![Class_Diagram](/images/Class_Diagram.PNG)
 
 # ERD
 
