@@ -2,7 +2,7 @@
 
 The application is a Covid-19 friendly library system. The purpose of this application is so that a library can limit the amount of visitors to the facility while still offering the basic library features. The members of the library that have an account registered will be able to loan books from the library. The members will be able to browse through the catalogue of books available and are able to put in loan requests. 
 
-The admin can add , remove and update books on the application. Furthermore the admin can accept loan requests from members and can either allow or deny the requests.  The admin will also be able to update members and remove those who have broken the library policy.  
+The admin can accept loan requests from members and can either allow or deny the requests.  
 
 # Class Diagram
 
@@ -11,6 +11,18 @@ The admin can add , remove and update books on the application. Furthermore the 
 # ERD
 
 ![ERD](/images/ERD.jpg)
+
+# Screenshots of application
+
+<img src="/Screenshots/LogInPage.PNG" alt="Log-In Page" style="zoom:50%;" />
+
+<img src="/Screenshots/RegistrationPage.PNG" alt="Registration Page" style="zoom:50%;" />
+
+<img src="/Screenshots/BooksPage.PNG" alt="Books Page" style="zoom:50%;" />
+
+<img src="/Screenshots/BookDetailsPage.PNG" alt="Book Details Page" style="zoom: 50%;" />
+
+<img src="/Screenshots/AdminPage.PNG" alt="Admin Page" style="zoom:50%;" />
 
 # Sprints
 
@@ -201,4 +213,42 @@ All the tasks of sprint 6 have been completed. The sprint consisted of task 4, w
 ###### Sprint Retrospective
 
 There was not a lot of tasks for user sprint 6, but it required some time to finish testing the application. With this sprint I have finished off the final functional requirement. This sprint was rather short, but there was a lot of outside deadlines that interfered with the sprint. Overall, the sprint was a success.
+
+
+
+# Overall Retrospective
+
+This project was a big learning experience for me. The library system application was my second three tier application that I have produced. I have learned a lot of in all three aspects of the application. For the G.U.I I have learned how to design the front-end of the application with XAML,  how to bind values to front-end elements and how to handle user events. For the back-end I have used a SQL database, where I have learned how to correctly design the database with Entity Framework using the model first approach. Using the model first approach I have also learned how to update the database schema. For the business layer of the project I have learned how to preform create, read, update and delete queries on the database using C# code. 
+
+During the creation of the application there were a few setbacks. The main cause of this was poor planning at the start. In the first sprint I quickly realised that the database was not correctly  structured. This led to a lot of time being wasted and at the end decided that it was best to delete the database and create it again. Another setback was that at times I have forgotten to create unit tests for methods that I have created. The reason this happened is that I spend most time making sure that the method works and at the end not realise that I didn't create a unit test for it.
+
+What I would do different next time is spending more time planning the project and making sure that unit tests are created before the methods. 
+
+Continuing on from this I would like to add several other features that couldn't be included previously due to not having enough time. What I would like to include are:
+
+- An Admin feature where they can read books from a csv file.
+- A better G.U.I
+- An Email feature that will be used to inform members if a request had been accepted or denied.
+
+
+
+# Further Notes
+
+###### Database Set-up
+
+The application already contains the model of the database. What you need to do is go to the Package Management Console, which you can open via the search bar in Visual Studio. After that you type the following command. 
+
+```
+Add-Migration NameOfMigration
+```
+
+Followed by:
+
+```
+Update-Database
+```
+
+###### Database Data
+
+In the LibraryBusiness folder you can find a program.cs file. This file contains the code to create the admin account and 4 book entries. You can use this to add more books if needed.  
 
