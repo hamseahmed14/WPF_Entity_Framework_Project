@@ -8,14 +8,13 @@
 
   <ItemGroup>
     <None Remove="ERD.png" />
-    <None Remove="HarryPotterAndGobletOfFireImage.jpg" />
-    <None Remove="HarryPotterPhilosoperStoneNewImage.jpg" />
+    <None Remove="HarryPotterOrderOfPhoenixImage.jpg" />
     <None Remove="Images\profile_icon.png" />
-    <None Remove="ScandalInBohemia.jpg" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Book_Images\HarryPotterAndGobletOfFireImage.jpg" />
+    <Resource Include="Book_Images\HarryPotterOrderOfPhoenixImage.jpg" />
     <Resource Include="Book_Images\HarryPotterPhilosoperStoneNewImage.jpg" />
     <Resource Include="Images\profile_icon.png" />
   </ItemGroup>

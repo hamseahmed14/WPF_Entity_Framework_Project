@@ -2,11 +2,12 @@ using LibraryApp;
 using LibraryBusiness;
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace LibraryTests
 {
-    public class RegistrationTests
+    public class LibraryUnitTests
     {
         CRUDManager _crudmanager = new CRUDManager();
         [SetUp]
@@ -159,6 +160,208 @@ namespace LibraryTests
             Assert.AreEqual(l, _crudmanager.SelectedLoan);
         }
 
+        public void WhenBookIsTakenOutByMember_AvailableBookDecreases()
+        {
+            Book b = new Book()
+            {
+                AuthorId = 1,
+                Title = "This",
+                Genre = "Sci-Fi",
+                Description = "Lorem Ipsum",
+                Available = 10,
+                Quantity = 3,
+                ImageSrc = "Image"
+            };
+
+            _crudmanager.CreateBook(b);
+            var before = _crudmanager.RetrieveBook("This");
+            _crudmanager.DecreaseAvailable(before.BookId);
+            var after = _crudmanager.RetrieveBook("This");
+
+            Assert.AreEqual(9, after.Available);
+        }
+
+        [Test]
+        public void WhenBookIsAdded_TheNumberOfBooksIsIncreasedBy1()
+        {
+            Book b = new Book()
+            {
+                AuthorId = 1,
+                Title = "This",
+                Genre = "Sci-Fi",
+                Description = "Lorem Ipsum",
+                Available = 10,
+                Quantity = 3,
+                ImageSrc = "Image"
+            };
+
+            var before = _crudmanager.RetrieveAllBooks().Count();
+
+            _crudmanager.CreateBook(b);
+
+            var after = _crudmanager.RetrieveAllBooks().Count();
+
+            Assert.AreEqual(before, after - 1);
+        }
+
+        [Test]
+        public void WhenLoanRequestIsAdded_LoanIsIncreasedBy1()
+        {
+            using (var db = new LibraryContext())
+            {
+
+                Book b = new Book()
+                {
+                    AuthorId = 1,
+                    Title = "This",
+                    Genre = "Sci-Fi",
+                    Description = "Lorem Ipsum",
+                    Available = 10,
+                    Quantity = 3,
+                    ImageSrc = "Image"
+                };
+
+                _crudmanager.CreateBook(b);
+                var book = _crudmanager.RetrieveBook("This");
+
+                _crudmanager.CreateMember("Hamse", "Ahmed", "Hamse", "hamse-27@hotmail.com", "21A", "London Road", "leicester", "LE8 0SU", "password");
+                var member = db.Members.Where(m => m.Username == "Hamse").FirstOrDefault();
+                var date = DateTime.Now;
+                var returndate = date.AddDays(14);
+                var loan = new Loan() { MemberId = member.MemberId, LoanDate = date };
+
+                var loandetail = new LoanDetail() { BookId = book.BookId, Loan = loan, ReturnDate = returndate, Request = "Pending" };
+
+                var before = db.Loans.ToList().Count();
+                db.LoanDetails.Add(loandetail);
+                db.SaveChanges();
+                var after = db.Loans.ToList().Count();
+
+                Assert.AreEqual(before, after - 1);
+            }
+
+        }
+
+        [Test]
+        public void WhenAllBooksThatAreLinkedToAMemberIsRetrieved_ThenCorrectBookCountIsGiven()
+        {
+            using (var db = new LibraryContext())
+            {
+
+
+                Book b = new Book()
+                {
+                    AuthorId = 1,
+                    Title = "This",
+                    Genre = "Sci-Fi",
+                    Description = "Lorem Ipsum",
+                    Available = 10,
+                    Quantity = 3,
+                    ImageSrc = "Image"
+                };
+
+                _crudmanager.CreateBook(b);
+                var book = _crudmanager.RetrieveBook("This");
+
+                _crudmanager.CreateMember("Hamse", "Ahmed", "Hamse", "hamse-27@hotmail.com", "21A", "London Road", "leicester", "LE8 0SU", "password");
+                var member = db.Members.Where(m => m.Username == "Hamse").FirstOrDefault();
+                var date = DateTime.Now;
+                var returndate = date.AddDays(14);
+                var loan = new Loan() { MemberId = member.MemberId, LoanDate = date };
+
+                var loandetail = new LoanDetail() { BookId = book.BookId, Loan = loan, ReturnDate = returndate, Request = "Pending" };
+                db.LoanDetails.Add(loandetail);
+                db.SaveChanges();
+
+                var result = _crudmanager.GetMemberBooks(member.MemberId).Count();
+
+                Assert.AreEqual(1, result);
+            }
+        }
+
+        [Test]
+        public void WhenMemberSearcherThroughBook_CorrectBooksAreReturned()
+        {
+            Book book1 = new Book()
+            {
+                AuthorId = 1,
+                Title = "This",
+                Genre = "Sci-Fi",
+                Description = "Lorem Ipsum",
+                Available = 10,
+                Quantity = 3,
+                ImageSrc = "Image"
+            };
+
+            Book book2 = new Book()
+            {
+                AuthorId = 1,
+                Title = "Jungle Book",
+                Genre = "Sci-Fi",
+                Description = "Lorem Ipsum",
+                Available = 10,
+                Quantity = 3,
+                ImageSrc = "Image"
+            };
+
+            List<Book> list = new List<Book>();
+            list.Add(book1);
+            list.Add(book2);
+
+            var result = _crudmanager.Search(list, "Jungle").Count();
+
+            Assert.AreEqual(1, result);
+
+        }
+
+        [Test]
+        public void WhenMemberFiltersByGenre_CorrectBooksAreReturned()
+        {
+
+            Book book1 = new Book()
+            {
+                AuthorId = 1,
+                Title = "Star Wars",
+                Genre = "Sci-Fi",
+                Description = "Lorem Ipsum",
+                Available = 10,
+                Quantity = 3,
+                ImageSrc = "Image"
+            };
+
+            Book book2 = new Book()
+            {
+                AuthorId = 1,
+                Title = "Star Trek",
+                Genre = "Sci-Fi",
+                Description = "Lorem Ipsum",
+                Available = 10,
+                Quantity = 3,
+                ImageSrc = "Image"
+            };
+
+            Book book3 = new Book()
+            {
+                AuthorId = 1,
+                Title = "Jungle Book",
+                Genre = "Adventure",
+                Description = "Lorem Ipsum",
+                Available = 10,
+                Quantity = 3,
+                ImageSrc = "Image"
+            };
+
+
+            List<Book> list = new List<Book>();
+            list.Add(book1);
+            list.Add(book2);
+            list.Add(book3);
+
+            var result = _crudmanager.FilterGenre(list,"Sci-Fi").Count();
+
+            Assert.AreEqual(2,result);
+        }
+
         [TearDown]
         public void TearDown()
         {
@@ -174,10 +377,17 @@ namespace LibraryTests
 
                 var selectedBook =
                    from b in db.Books
-                   where b.Title == "ThiS"
+                   where b.Title == "This"
                    select b;
-
                 db.Books.RemoveRange(selectedBook);
+
+                var selectedLoan =
+                    from l in db.Loans
+                    where l.MemberId == 1000
+                    select l;
+                db.Loans.RemoveRange(selectedLoan);
+
+    
                 db.SaveChanges();
             }
         }

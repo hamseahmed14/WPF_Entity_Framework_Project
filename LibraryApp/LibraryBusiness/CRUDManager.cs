@@ -214,6 +214,7 @@ namespace LibraryBusiness
             {
                 SelectedBook = db.Books.Find(bookId);
                 SelectedBook.Available = SelectedBook.Available -1;
+                db.SaveChanges();
             }
         }
 
@@ -241,22 +242,6 @@ namespace LibraryBusiness
                 return db.LoanDetails.Include(b => b.Book).Include(l => l.Loan).ThenInclude(m => m.Member).Where(m => m.Loan.Member.MemberId == memberId).ToList();
             }
         }
-
-        
-
-        
-
-        //public void InputBookCSV(List<string> books)
-        //{
-        //    using (var db = new LibraryContext())
-        //    {
-        //        foreach (var item in books)
-        //        {
-        //            var newBook = new Book() { Name = item };
-        //            db.Books.Add(newBook);
-        //            db.SaveChanges();
-        //        }
-        //    }
-        //}
+ 
     }
 }
