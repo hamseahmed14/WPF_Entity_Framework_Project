@@ -63,9 +63,9 @@ namespace LibraryWPF
                 {
                     if (cm.IsValidEmailAddress(email)) { 
                     var enc = Crypto.Encrypt(password);
-             
-                   
-                    cm.CreateMember(firstname,lastname,username,email,phone,housenum,street,city,postcode,enc);
+
+                    Address address = new Address(housenum,street,city,postcode);
+                    cm.CreateMember(firstname,lastname,username,email,address,enc, phone);
 
                     MessageBox.Show("Account has been created", "Account");
                     }

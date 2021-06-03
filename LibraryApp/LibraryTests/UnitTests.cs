@@ -38,7 +38,7 @@ namespace LibraryTests
         public void WhenANewMemberIsAdded_TheNumberOfMemberssIncreasesBy1()
         {
             var expected = _crudmanager.RetrieveAllMembers().Count();
-            _crudmanager.CreateMember("Hamse", "Ahmed", "Hamse", "hamse-27@hotmail.com", "21A", "London Road", "leicester", "LE8 0SU", "password");
+            _crudmanager.CreateMember("Hamse", "Ahmed", "Hamse", "hamse-27@hotmail.com", new Address("21A", "London Road", "leicester", "LE8 0SU"), "password");
             var actual = _crudmanager.RetrieveAllMembers().Count();
             Assert.AreEqual(expected, actual - 1);
         }
@@ -81,7 +81,7 @@ namespace LibraryTests
         [Test]
         public void WhenCorrectAuth_CorrectMemberIsReturned()
         {
-            _crudmanager.CreateMember("Hamse", "Ahmed", "Hamse", "hamse-27@hotmail.com", "21A", "London Road", "leicester", "LE8 0SU", "password");
+            _crudmanager.CreateMember("Hamse", "Ahmed", "Hamse", "hamse-27@hotmail.com",new Address("21A", "London Road", "leicester", "LE8 0SU") , "password");
 
             AuthenticationManager auth = new AuthenticationManager();
             var result = auth.AuthIsCorrect("Hamse", "password");
@@ -93,7 +93,7 @@ namespace LibraryTests
         [Test]
         public void WhenIncorrectAuth_IncorrectMassegeWillBeReturned()
         {
-            _crudmanager.CreateMember("Hamse", "Ahmed", "Hamse", "hamse-27@hotmail.com", "21A", "London Road", "leicester", "LE8 0SU", "password");
+            _crudmanager.CreateMember("Hamse", "Ahmed", "Hamse", "hamse-27@hotmail.com", new Address("21A", "London Road", "leicester", "LE8 0SU"), "password");
 
             AuthenticationManager auth = new AuthenticationManager();
             var result = auth.AuthIsCorrect("hamse", "passsword");
@@ -224,7 +224,7 @@ namespace LibraryTests
                 _crudmanager.CreateBook(b);
                 var book = _crudmanager.RetrieveBook("This");
 
-                _crudmanager.CreateMember("Hamse", "Ahmed", "Hamse", "hamse-27@hotmail.com", "21A", "London Road", "leicester", "LE8 0SU", "password");
+                _crudmanager.CreateMember("Hamse", "Ahmed", "Hamse", "hamse-27@hotmail.com", new Address("21A", "London Road", "leicester", "LE8 0SU"), "password");
                 var member = db.Members.Where(m => m.Username == "Hamse").FirstOrDefault();
                 var date = DateTime.Now;
                 var returndate = date.AddDays(14);
@@ -263,7 +263,7 @@ namespace LibraryTests
                 _crudmanager.CreateBook(b);
                 var book = _crudmanager.RetrieveBook("This");
 
-                _crudmanager.CreateMember("Hamse", "Ahmed", "Hamse", "hamse-27@hotmail.com", "21A", "London Road", "leicester", "LE8 0SU", "password");
+                _crudmanager.CreateMember("Hamse", "Ahmed", "Hamse", "hamse-27@hotmail.com", new Address("21A", "London Road", "leicester", "LE8 0SU"), "password");
                 var member = db.Members.Where(m => m.Username == "Hamse").FirstOrDefault();
                 var date = DateTime.Now;
                 var returndate = date.AddDays(14);

@@ -14,19 +14,25 @@ namespace LibraryBusiness
         public Book SelectedBook { get; set; }
         public LoanDetail SelectedLoan { get; set; }
 
-        public void CreateMember(string firstname, string lastname,string username , string email, string phonenumber, string housenumber, string street, string city, string postalcode, string password)
+        public void CreateMember(string firstname, string lastname,string username , string email, Address address, string password, string phonenumber = "")
         {
-            var newMember = new Member() {FirstName = firstname, LastName = lastname,Username = username, Email = email, PhoneNumber = phonenumber, HouseNumber = housenumber,Street = street, City = city, PostalCode = postalcode, Role ='M', Password = password};
+            var newMember = new Member() {
+                FirstName = firstname, 
+                LastName = lastname,
+                Username = username, 
+                Email = email, 
+                PhoneNumber = phonenumber, 
+                HouseNumber = address.HouseNumber,
+                Street = address.Street, 
+                City = address.City, 
+                PostalCode = address.PostalCode, 
+                Role ='M', 
+                Password = password};
+
             AddMember(newMember);
         }
 
-        public void CreateMember(string firstname, string lastname,string username ,string email, string housenumber, string street, string city, string postalcode, string password)
-        {
-            
-            var newMember = new Member() { FirstName = firstname, LastName = lastname,Username = username ,Email = email, HouseNumber = housenumber, Street = street, City = city, PostalCode = postalcode, Role = 'M', Password = password};
-            AddMember(newMember);
-        }
-
+      
         private void AddMember(Member member)
         {
             using (var db = new LibraryContext())
